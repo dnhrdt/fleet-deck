@@ -1,0 +1,41 @@
+{
+  "Name": "Fleet Deck",
+  "Version": "0.1.0",
+  "Author": "Fleet",
+  "UUID": "com.fleet.deck",
+  "Icon": "imgs/plugin/icon",
+  "CodePath": "bin/plugin.js",
+  "Description": "Real-time Claude Code session monitoring and one-click access",
+  "Category": "Fleet",
+  "CategoryIcon": "imgs/plugin/icon",
+  "SDKVersion": 2,
+  "Software": {
+    "MinimumVersion": "6.4"
+  },
+  "OS": [
+    {
+      "Platform": "windows",
+      "MinimumVersion": "10"
+    }
+  ],
+  "Nodejs": {
+    "Version": "20",
+    "Debug": "enabled"
+  },
+  "Actions": [
+    {
+      "UUID": "com.fleet.deck.session",
+      "Name": "Session",
+      "Icon": "imgs/actions/session/icon",
+      "Tooltip": "Monitor Claude Code session status and launch terminal",
+      "PropertyInspectorPath": "ui/session-pi.html",
+      "Controllers": ["Keypad"],
+      "States": [
+        {
+          "Image": "imgs/actions/session/idle",
+          "Name": "Idle"
+        }
+      ]
+    }
+  ]
+}

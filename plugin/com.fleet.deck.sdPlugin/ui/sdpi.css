@@ -1,0 +1,57 @@
+:root {
+  --sdpi-bgcolor: #2D2D2D;
+  --sdpi-color: #d8d8d8;
+  --sdpi-bordercolor: #3a3a3a;
+  --sdpi-inputcolor: #4a4a4a;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 12px;
+  background-color: var(--sdpi-bgcolor);
+  color: var(--sdpi-color);
+}
+
+.sdpi-wrapper {
+  padding: 12px;
+}
+
+.sdpi-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+
+.sdpi-item-label {
+  margin-bottom: 4px;
+  font-weight: 500;
+  color: #9ca3af;
+}
+
+.sdpi-item-value {
+  background-color: var(--sdpi-inputcolor);
+  border: 1px solid var(--sdpi-bordercolor);
+  border-radius: 4px;
+  color: var(--sdpi-color);
+  padding: 6px 8px;
+  font-size: 12px;
+}
+
+.sdpi-item-value:focus {
+  outline: none;
+  border-color: #6366f1;
+}
+
+input[type="checkbox"].sdpi-item-value {
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+input[type="text"]::placeholder {
+  color: #6b7280;
+}

@@ -1,0 +1,41 @@
+# Memory Bank - local only
+memory-bank/
+
+# Node.js
+node_modules/
+npm-debug.log*
+
+# Build artifacts
+plugin/com.fleet.deck.sdPlugin/bin/
+
+# Stream Deck backup (local config)
+backup/
+
+# Test files with sensitive paths
+test/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Session files
+.session-handoff.md
+.claude-init-pending
+
+# Status files (generated at runtime)
+.fleet-deck-status.json
+
+# Claude local settings
+.claude/
+
+# Logs
+*.log
+
+# Windows artifacts
+nul
