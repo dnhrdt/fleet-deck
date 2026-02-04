@@ -1,6 +1,13 @@
 {
-  "enabled": true,
-  "obsidianVault": "D:\\dev\\Obsidian\\Fleet",
-  "targetFolder": "Projects/fleet-deck",
-  "syncPaths": ["memory-bank/"]
+  "targetVault": "C:/Eigene Dateien/Obsidian Vault",
+  "mappings": [
+    {
+      "source": "memory-bank/",
+      "target": "Projects/fleet-deck/memory-bank/"
+    }
+  ],
+  "options": {
+    "addMetadata": false,
+    "transformations": { "enabled": false }
+  }
 }
