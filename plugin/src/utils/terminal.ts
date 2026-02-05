@@ -7,8 +7,8 @@ export function launchTerminal(projectPath: string, autoStartClaude: boolean = f
   const args: string[] = ['-d', projectPath];
 
   if (autoStartClaude) {
-    // Open terminal and run claude command
-    args.push('--', 'bash', '-c', 'claude');
+    // Open terminal and run claude command via cmd (works on Windows)
+    args.push('cmd', '/k', 'claude');
   }
 
   spawn('wt.exe', args, {
