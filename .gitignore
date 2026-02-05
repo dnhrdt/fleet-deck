@@ -30,6 +30,7 @@ Thumbs.db
 
 # Status files (generated at runtime)
 .fleet-deck-status.json
+.fleet-deck-events.log
 
 # Claude local settings
 .claude/

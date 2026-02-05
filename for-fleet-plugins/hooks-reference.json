@@ -1,0 +1,84 @@
+{
+  "_info": "Reference hook configuration for ~/.claude/settings.json",
+  "_version": "v6 (2026-02-05)",
+  "_install": "Merge these hooks into your settings.json 'hooks' section",
+  "_notes": [
+    "SessionStart is BROKEN on Windows (Issue #9542) - use UserPromptSubmit instead",
+    "PermissionRequest/Notification are BROKEN in VSCode Extension (Issues #13203, #16114)",
+    "PostToolUse only changes status when previousStatus === 'blocked' (permission recovery)",
+    "Adjust the path to match your script location"
+  ],
+
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node C:/Users/Michael.DEINHARDT/.claude/scripts/fleet-deck-status.js UserPromptSubmit"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node C:/Users/Michael.DEINHARDT/.claude/scripts/fleet-deck-status.js PostToolUse"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node C:/Users/Michael.DEINHARDT/.claude/scripts/fleet-deck-status.js Stop"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "permission_prompt",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node C:/Users/Michael.DEINHARDT/.claude/scripts/fleet-deck-status.js Notification"
+          }
+        ]
+      }
+    ],
+    "PermissionRequest": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node C:/Users/Michael.DEINHARDT/.claude/scripts/fleet-deck-status.js PermissionRequest"
+          }
+        ]
+      }
+    ]
+  },
+
+  "_changelog": {
+    "v6 (2026-02-05)": [
+      "Added PostToolUse hook for permission recovery (blocked → running)",
+      "PostToolUse only fires status change when previous status was 'blocked'"
+    ],
+    "v5 (2026-02-05)": [
+      "Added matcher 'permission_prompt' for Notification",
+      "Added matcher '*' for PermissionRequest"
+    ],
+    "v4 (2026-02-05)": [
+      "Changed SessionStart → UserPromptSubmit (Windows bug workaround)",
+      "Added Stop hook",
+      "Added Notification hook",
+      "Added PermissionRequest hook"
+    ]
+  }
+}

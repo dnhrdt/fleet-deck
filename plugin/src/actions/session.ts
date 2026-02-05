@@ -134,6 +134,10 @@ export class SessionAction extends SingletonAction<SessionSettings> {
     } else if (status.status === 'error') {
       icon = ICONS.error;
       title = instanceName ? `${instanceName}\nERROR` : 'ERROR';
+    } else if (status.status === 'blocked') {
+      // Permission request - needs immediate attention (RED)
+      icon = ICONS.error;
+      title = instanceName ? `${instanceName}\nBLOCKED` : 'BLOCKED';
     } else if (status.needs_attention || status.status === 'waiting') {
       icon = ICONS.waiting;
       title = instanceName ? `${instanceName}\nINPUT` : 'INPUT';

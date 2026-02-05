@@ -4,7 +4,7 @@ import { join } from 'node:path';
 export interface FleetDeckStatus {
   instance: string;
   project: string;
-  status: 'running' | 'waiting' | 'idle' | 'error' | 'stopped';
+  status: 'running' | 'waiting' | 'idle' | 'error' | 'stopped' | 'blocked';
   context_percent: number;
   needs_attention: boolean;
   attention_reason: string | null;
